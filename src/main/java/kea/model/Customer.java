@@ -13,22 +13,22 @@ public class Customer {
     private int customer_id;
     private String first_name;
     private String last_name;
-    private int phone_number;
+    private String phone_number;
     private String email;
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private String SignUp_date;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private String Signup_date;
     private String city;
     private int zip_code;
 
     public Customer() {
     }
 
-    public Customer(String first_name, String last_name, int phone_number, String email, String signUp_date, String city, int zip_code) {
+    public Customer(String first_name, String last_name, String phone_number, String email, String signup_date, String city, int zip_code) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.phone_number = phone_number;
         this.email = email;
-        SignUp_date = signUp_date;
+        Signup_date = signup_date;
         this.city = city;
         this.zip_code = zip_code;
     }
@@ -57,11 +57,11 @@ public class Customer {
         this.last_name = last_name;
     }
 
-    public int getPhone_number() {
+    public String getPhone_number() {
         return phone_number;
     }
 
-    public void setPhone_number(int phone_number) {
+    public void setPhone_number(String phone_number) {
         this.phone_number = phone_number;
     }
 
@@ -73,12 +73,12 @@ public class Customer {
         this.email = email;
     }
 
-    public String getSignUp_date() {
-        return SignUp_date;
+    public String getSignup_date() {
+        return Signup_date;
     }
 
-    public void setSignUp_date(String signUp_date) {
-        SignUp_date = signUp_date;
+    public void setSignUp_date(String signup_date) {
+        Signup_date = signup_date;
     }
 
     public String getCity() {

@@ -50,4 +50,10 @@ public class Course {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public void ny(){
+
+    }
+
 }
+

@@ -3,6 +3,7 @@ package kea.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "booking")
@@ -13,19 +14,14 @@ public class Booking {
     private int booking_id;
     private int customer_id;
     private int course_id;
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private String start_date_time;
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private String end_date_time;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date date;
 
-    public Booking() {
-    }
 
-    public Booking(int customer_id, int course_id, String start_date_time, String end_date_time) {
+    public Booking(int customer_id, int course_id, Date date) {
         this.customer_id = customer_id;
         this.course_id = course_id;
-        this.start_date_time = start_date_time;
-        this.end_date_time = end_date_time;
+        this.date = date;
     }
 
     public int getBooking_id() {
@@ -52,19 +48,12 @@ public class Booking {
         this.course_id = course_id;
     }
 
-    public String getStart_date_time() {
-        return start_date_time;
+    public Date getDate() {
+        return date;
     }
 
-    public void setStart_date_time(String start_date_time) {
-        this.start_date_time = start_date_time;
-    }
-
-    public String getEnd_date_time() {
-        return end_date_time;
-    }
-
-    public void setEnd_date_time(String end_date_time) {
-        this.end_date_time = end_date_time;
+    public void setDate(Date date) {
+        this.date = date;
     }
 }
+

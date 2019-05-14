@@ -15,20 +15,17 @@ public class Customer {
     private String last_name;
     private String phone_number;
     private String email;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private String Signup_date;
     private String city;
     private int zip_code;
 
     public Customer() {
     }
 
-    public Customer(String first_name, String last_name, String phone_number, String email, String signup_date, String city, int zip_code) {
+    public Customer(String first_name, String last_name, String phone_number, String email, String city, int zip_code) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.phone_number = phone_number;
         this.email = email;
-        Signup_date = signup_date;
         this.city = city;
         this.zip_code = zip_code;
     }
@@ -71,14 +68,6 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getSignup_date() {
-        return Signup_date;
-    }
-
-    public void setSignUp_date(String signup_date) {
-        Signup_date = signup_date;
     }
 
     public String getCity() {

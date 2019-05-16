@@ -15,11 +15,13 @@ public class Course {
     private String name;
     private int duration;
     private int price;
+    private String location;
 
-    public Course(String name, int duration, int price) {
+    public Course(String name, int duration, int price, String location) {
         this.name = name;
         this.duration = duration;
         this.price = price;
+        this.location = location;
     }
 
     public Course() {
@@ -55,6 +57,14 @@ public class Course {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }
 

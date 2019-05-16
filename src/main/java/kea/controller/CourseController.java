@@ -22,7 +22,7 @@ public class CourseController {
     }*/
 
     @GetMapping("/courses")
-    public Iterable<Course> getCourse(){
+    public @ResponseBody Iterable<Course> getCourse(){
         return courseRepository.findAll();
     }
 }

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 @Repository
 public interface BookingRepository extends CrudRepository<Booking, Integer> {
 
-    @Query(value = "select * from booking")
+    @Query(value = "select booking_id, date from booking")
     ArrayList<Booking>view();
 
 

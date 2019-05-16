@@ -11,12 +11,15 @@ public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int booking_id;
+    private Integer booking_id;
     private int customer_id;
     private int course_id;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
 
+    public Booking(){
+
+    }
 
     public Booking(int customer_id, int course_id, Date date) {
         this.customer_id = customer_id;

@@ -13,10 +13,10 @@ public class Course {
     private int course_id;
     @Column(name = "name")
     private String name;
-    private int duration;
+    private String duration;
     private int price;
 
-    public Course(String name, int duration, int price) {
+    public Course(String name, String duration, int price) {
         this.name = name;
         this.duration = duration;
         this.price = price;
@@ -41,11 +41,11 @@ public class Course {
         this.name = name;
     }
 
-    public int getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 

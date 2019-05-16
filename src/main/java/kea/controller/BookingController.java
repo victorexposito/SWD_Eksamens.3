@@ -18,7 +18,7 @@ public class BookingController {
     @GetMapping("/test")
     public @ResponseBody Collection<Booking> bookingViews(){
         //System.out.println(bookingRepository.bookingView());
-        return bookingRepository.bookingView();
+        return bookingRepository.view();
 
     }
 

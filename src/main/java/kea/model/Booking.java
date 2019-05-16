@@ -9,12 +9,16 @@ import java.util.Date;
 @Table(name = "booking")
 public class Booking {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer booking_id;
     private int customer_id;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
+    @OneToOne
+    Customer customer;
+
 
     public Booking(){
 
@@ -25,6 +29,9 @@ public class Booking {
         this.customer_id = customer_id;
 
         this.date = date;
+    }
+
+    public Booking() {
     }
 
     public int getBooking_id() {

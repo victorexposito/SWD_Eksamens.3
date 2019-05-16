@@ -17,6 +17,9 @@ public class Customer {
     private String email;
     private String city;
     private int zip_code;
+    @OneToOne
+    private Course course;
+
 
     public Customer() {
     }

@@ -8,11 +8,16 @@
 
 her skal der være kørekort pakker
 
+<form action="/courses" method="get">
 
-
-<span th:text="${course.name}"></span>
-<span th:text="${course.duration}">Name</span>
-<span th:text="${course.time}">Name</span>
-
+    <div th:text="${course.course}}">
+    <div th:text="course.name"></div>
+    <div th:text="course.duration"></div>
+    <div th:text="course.price"></div>
+    </div>
+</form>
+<div style="width: 50%; float: left"; >
+<p>hej</p>
+</div>
 </body>
 </html>

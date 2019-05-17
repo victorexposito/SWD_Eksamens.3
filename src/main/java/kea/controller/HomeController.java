@@ -12,4 +12,9 @@ public class HomeController {
 
         return "index";
     }
+
+    @GetMapping("/courses")
+    public String courseMenu(){
+        return "courses";
+    }
 }

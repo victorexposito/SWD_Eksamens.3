@@ -11,10 +11,14 @@ import java.util.List;
 
 @Repository
 public class Customer_BookingRepository {
+
     @Autowired
     private JdbcTemplate jdbc;
     private SqlRowSet rs;
-    private ArrayList<Customer_Booking> customer_bookings;
+    ArrayList<Customer_Booking>customer_bookings;
+    public void test(){
+
+    }
 
 
 public List<Customer_Booking> readMenu(){
@@ -23,7 +27,7 @@ public List<Customer_Booking> readMenu(){
             "from booking b\n" +
             "join customer cu on b.customer_id = cu.customer_id\n" +
             "where b.booking_id > 0\n" +
-            "Order by b.date desc");
+            "Order by b.signup_date desc");
     while (rs.next()){
         customer_bookings.add(new Customer_Booking(rs.getString("first_name"),
                 rs.getString("last_name"),

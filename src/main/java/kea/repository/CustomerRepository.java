@@ -1,7 +1,10 @@
 package kea.repository;
 
 
+import kea.model.Customer;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public class CustomerRepository implements RepositoryI<Customer>{
@@ -26,9 +29,5 @@ public class CustomerRepository implements RepositoryI<Customer>{
         return null;
     }
 
-    @Override
-    public List<Customer> readAll(){
 
-        return null;
-    }
 }

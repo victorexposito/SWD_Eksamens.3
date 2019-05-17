@@ -28,6 +28,14 @@ public class Customer_Booking {
     public Customer_Booking() {
     }
 
+    public Customer_Booking(String first_name, String last_name, String course_name, String location_name, Date signup_date) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.course_name = course_name;
+        this.location_name = location_name;
+        this.signup_date = signup_date;
+    }
+
     public Customer_Booking(int id, String first_name, String last_name, String phone_number, String email, String city, String zip_code, String course_name, String course_duration, String course_price, String location_name, String location_address, String location_city, int booking_id, Date signup_date) {
         this.id = id;
         this.first_name = first_name;

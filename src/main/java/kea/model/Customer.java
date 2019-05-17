@@ -10,15 +10,26 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="customer_id")
     private int customer_id;
+    @Column(name="first_name")
     private String first_name;
+    @Column(name="last_name")
     private String last_name;
+    @Column(name="phone_number")
     private String phone_number;
+    @Column(name="email")
     private String email;
+    @Column(name="city")
     private String city;
+    @Column(name="zip_code")
     private int zip_code;
+    /*
     @OneToOne
     private Course course;
+    */
+    @OneToOne(mappedBy = "customer")
+    private Booking booking;
 
 
     public Customer() {

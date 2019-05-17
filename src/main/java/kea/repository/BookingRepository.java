@@ -6,13 +6,12 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 @Repository
 public interface BookingRepository extends CrudRepository<Booking, Integer> {
 
-    @Query(value = "select booking_id, date from booking")
+
+    @Query(value = "select * from booking", nativeQuery = true)
     ArrayList<Booking>view();
-
-
-
 }

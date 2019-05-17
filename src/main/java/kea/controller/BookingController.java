@@ -21,6 +21,7 @@ public class BookingController {
 
     @GetMapping("/test")
     public String testForm(Model model){
+        System.out.println(bookingRepository.view());
         model.addAttribute("booking", bookingRepository.view());
         return "test";
 

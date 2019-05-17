@@ -12,10 +12,13 @@ public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer booking_id;
+    @Column(name="booking_id")
+    private int booking_id;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(name="date")
     private Date date;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="customer_id", referencedColumnName = "customer_id")
     Customer customer;
 
 

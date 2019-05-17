@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="menu">
+    <table>
+        <thead>
+        <tr>
+            <th>Fornavn</th>
+            <th>Efternavn</th>
+            <th>Kørepakke</th>
+            <th>Køreskole</th>
+            <th>Dato</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Customer_Booking: ${customer_booking}">
+            <td th:text="${Customer_Booking.first_name}"/>
+            <td th:text="${Customer_Booking.last_name}"/>
+            <td th:text="${Customer_Booking.course_name}"/>
+            <td th:text="${Customer_Booking.location_name}"/>
+            <td th:text="${Customer_Booking.signup_date}"/>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

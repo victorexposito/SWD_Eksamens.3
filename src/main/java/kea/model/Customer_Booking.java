@@ -28,7 +28,8 @@ public class Customer_Booking {
     public Customer_Booking() {
     }
 
-    public Customer_Booking(String first_name, String last_name, String course_name, String location_name, Date signup_date) {
+    public Customer_Booking(int id, String first_name, String last_name, String course_name, String location_name, Date signup_date) {
+        this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.course_name = course_name;

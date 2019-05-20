@@ -11,8 +11,10 @@
 
 <th:block th:include="fragment/nav :: nav"></th:block>
 
-<div class="menu">
-    <table>
+<div class="box1">
+
+    <table cellspacing="20" style="font-size: 150%">
+
         <thead>
         <tr>
             <th>Fornavn</th>
@@ -23,6 +25,7 @@
         </tr>
         </thead>
         <tbody>
+
         <tr th:each="Customer_Booking: ${customer_booking}">
             <td th:text="${Customer_Booking.first_name}"/>
             <td th:text="${Customer_Booking.last_name}"/>

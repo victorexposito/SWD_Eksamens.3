@@ -23,13 +23,14 @@ public class Customer_BookingRepository implements RepositoryI<Customer_Booking>
     @Override
     public List<Customer_Booking> read(){
     ArrayList<Customer_Booking> customer_bookings = new ArrayList<>();
-    rs = jdbc.queryForRowSet("select cu.first_name, cu.last_name, cu.course_name, cu.location_name, b.signup_date\n" +
+    rs = jdbc.queryForRowSet("select cu.customer_id, cu.first_name, cu.last_name, cu.course_name, cu.location_name, b.signup_date\n" +
             "from booking b\n" +
             "join customer cu on b.customer_id = cu.customer_id\n" +
             "where b.booking_id > 0\n" +
             "Order by b.signup_date desc");
     while (rs.next()){
-        customer_bookings.add(new Customer_Booking(rs.getString("first_name"),
+        customer_bookings.add(new Customer_Booking(rs.getInt("customer_id"),
+                rs.getString("first_name"),
                 rs.getString("last_name"),
                 rs.getString("course_name"),
                 rs.getString("location_name"),
@@ -58,7 +59,7 @@ public class Customer_BookingRepository implements RepositoryI<Customer_Booking>
     @Override
     public Customer_Booking delete(Customer_Booking customer_booking) {
 
-        int result = jdbc.update("DELETE FROM customer_booking WHERE id = ?");
+        int result = jdbc.update("DELETE FROM customer_booking WHERE customer_id = ?");
 
         return customer_booking;
     }

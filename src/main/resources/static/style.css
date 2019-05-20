@@ -13,11 +13,17 @@ body {
     border-style: solid;
     font-size: large;
 }
-table { border-collapse:collapse;
-        border-spacing: 50px;
-
+table {
+    padding: 10px;
+    border-spacing:40 5px;
+    border-collapse: separate;
 
 }
+
+td{
+
+}
+
 table thead th { border-bottom: 1px solid #000; }
 
 

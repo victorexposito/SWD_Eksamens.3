@@ -1,30 +1,35 @@
 package kea.service;
 
-import org.springframework.stereotype.Repository;
+import kea.model.Customer;
+import kea.repository.CustomerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class CustomerService implements ServiceI {
+public class CustomerService implements ServiceI<Customer> {
+
+    @Autowired
+    CustomerRepository CR = new CustomerRepository();
 
     @Override
-    public Object create(Object o) {
+    public Customer create(Customer customer) {
+        return CR.create(customer);
+    }
+
+    @Override
+    public Customer read(Customer customer) {
         return null;
     }
 
     @Override
-    public Object read(Object o) {
+    public Customer update(Customer customer) {
         return null;
     }
 
     @Override
-    public Object update(Object o) {
-        return null;
-    }
-
-    @Override
-    public Object delete(Object o) {
+    public Customer delete(Customer customer) {
         return null;
     }
 

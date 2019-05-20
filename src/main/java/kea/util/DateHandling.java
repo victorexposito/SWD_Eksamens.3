@@ -11,8 +11,4 @@ public class DateHandling
         return formatter.format(date);
     }
 
-
-
-
-
 }

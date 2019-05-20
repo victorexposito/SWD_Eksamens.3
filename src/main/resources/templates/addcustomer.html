@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <th:block th:include="fragment/nav :: nav"></th:block>
+
+
+    <div align="center" class="container">
+        <h1>Customers</h1>
+        <table style="width: 70%">
+
+            <thead>
+            <th style="width: 20%">First name</th>
+            <th style="width: 30%">Last name</th>
+            <th style="width: 10%">Phone number</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="cbooking: ${cbooking}">
+                <td th:text="${cbooking.id}"></td>
+                <td th:text="${cbooking.first_name}"></td>
+                <td th:text="${cbooking.last_name}"></td>
+                <td th:text="${cbooking.phone_number}"></td>
+                <td th:text="${cbooking.email}"></td>
+                <td th:text="${cbooking.city}"></td>
+                <td th:text="${cbooking.zip_code}"></td>
+                <td th:text="${cbooking.course_name}"></td>
+                <td th:text="${cbooking.course_duration}"></td>
+                <td th:text="${cbooking.course_price}"></td>
+                <td th:text="${cbooking.location_name}"></td>
+                <td th:text="${cbooking.location_address}"></td>
+                <td th:text="${cbooking.location_city}"></td>
+                <td th:text="${cbooking.booking_id}"></td>
+                <td th:text="${cbooking.signup_date}"></td>
+
+            </tr>
+
+            </tbody>
+        </table>
+
+        <h1>Create new Customer</h1>
+        <form method="post" action="/addcustomer">
+            <input type="text" name="first_name" placeholder="First name">
+            <input type="text" name="last_name" placeholder="Last name">
+            <input type="text" name="phone_number" placeholder="Phone number">
+            <input type="submit" value="create new customer" class="btn btn-create">
+        </form>
+        <a th:href="@{'/'}">
+            <button class="btn btn-ed">Back</button>
+        </a>
+    </div>
+
+</body>
+</html>

@@ -46,8 +46,19 @@ public class Customer_BookingRepository implements RepositoryI<Customer_Booking>
     }
 
     @Override
-    public Customer_Booking read (Customer_Booking customer_booking) {
-        return null;
+    public Customer_Booking readId (int id) {
+
+            rs = jdbc.queryForRowSet("select cu.customer_id, cu.first_name, cu.last_name, cu.course_name, cu.location_name, b.signup_date from booking b join customer cu on b.customer_id = cu.customer_id where b.booking_id = '"+ id +"'Order by b.signup_date desc");
+        while (rs.next()){
+            return new Customer_Booking(rs.getInt("id"),
+            rs.getString("first_name"),
+                    rs.getString("last_name"),
+                    rs.getString("course_name"),
+                    rs.getString("location_name"),
+                    rs.getDate("signup_date"));
+        }
+
+        return new Customer_Booking();
     }
 
 

@@ -18,7 +18,7 @@ public class Customer_BookingService implements ServiceI<Customer_Booking> {
     }
 
     @Override
-    public Customer_Booking read(Customer_Booking customer_booking) {
+    public Customer_Booking readId(Customer_Booking customer_booking) {
         return null;
     }
 
@@ -29,11 +29,11 @@ public class Customer_BookingService implements ServiceI<Customer_Booking> {
 
     @Override
     public Customer_Booking delete(Customer_Booking customer_booking) {
-        return null;
+        return CB.delete(customer_booking);
     }
 
     @Override
-    public List<Customer_Booking> readAll() {
+    public List<Customer_Booking> read() {
         return null;
     }
 }

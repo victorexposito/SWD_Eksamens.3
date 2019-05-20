@@ -18,7 +18,7 @@ public class BookingService implements ServiceI<Booking> {
     }
 
     @Override
-    public Booking read(Booking booking) {
+    public Booking readId(Booking booking) {
         return null;
     }
 
@@ -33,7 +33,7 @@ public class BookingService implements ServiceI<Booking> {
     }
 
     @Override
-    public List readAll() {
+    public List read() {
         return null;
     }
 

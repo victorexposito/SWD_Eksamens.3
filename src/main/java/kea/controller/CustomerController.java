@@ -21,7 +21,7 @@ public class CustomerController {
     @PostMapping("/addBooking")
     public String addBooking(Model model){
 
-        model.addAttribute("customer_Booking",  )
+        model.addAttribute("customer_Booking", fd )
         return null;
     }
 

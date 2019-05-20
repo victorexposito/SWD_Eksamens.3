@@ -2,9 +2,12 @@ package kea.repository;
 
 
 import kea.model.Booking;
+import kea.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public class BookingRepository implements RepositoryI<Booking> {
@@ -37,6 +40,9 @@ public class BookingRepository implements RepositoryI<Booking> {
     public Booking delete(Booking booking) {
         return null;
     }
+
+    @Override
+    public List<Booking> read() { return null; }
 
 
     }

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class Customer_BookingRepository {
+public class Customer_BookingRepository implements RepositoryI<Customer_Booking>{
 
     @Autowired
     private JdbcTemplate jdbc;
@@ -19,9 +19,9 @@ public class Customer_BookingRepository {
     public void test(){
 
     }
-
-
-public List<Customer_Booking> readMenu(){
+    //Læser admin menu.
+    @Override
+    public List<Customer_Booking> read(){
     ArrayList<Customer_Booking> customer_bookings = new ArrayList<>();
     rs = jdbc.queryForRowSet("select cu.first_name, cu.last_name, cu.course_name, cu.location_name, b.signup_date\n" +
             "from booking b\n" +
@@ -37,8 +37,29 @@ public List<Customer_Booking> readMenu(){
     }
 
     return customer_bookings;
-}
+    }
+
+    @Override
+    public Customer_Booking create(Customer_Booking customer_booking) {
+        return null;
+    }
+
+    @Override
+    public Customer_Booking read (Customer_Booking customer_booking) {
+        return null;
+    }
 
 
+    @Override
+    public Customer_Booking update(Customer_Booking customer_booking) {
+        return null;
+    }
 
+    @Override
+    public Customer_Booking delete(Customer_Booking customer_booking) {
+
+        int result = jdbc.update("DELETE FROM customer_booking WHERE id = ?");
+
+        return customer_booking;
+    }
 }

@@ -20,7 +20,7 @@ public class Customer_BookingController {
 
     @GetMapping("/adminmenu")
     public String index(Model model){
-        model.addAttribute("customer_booking", customer_bookingRepository.readMenu());
+        model.addAttribute("customer_booking", customer_bookingRepository.read());
         return "adminmenu";
     }
 

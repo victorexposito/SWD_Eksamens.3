@@ -1,104 +1,133 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica;
+    background-color: #f2f2f2;
+}
+
+.box1 {
+    background: #ddd;
+    padding: 20px;
+    padding-top: 0px;
+    border: 2px;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+.box1b {
+    background: #f2f2f2;
+    padding: 20px;
+    padding-top: 0px;
+    border: 2px;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+.link1 {
+    text-decoration: none;
+    color: steelblue;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 18px 16px;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #5F9EA0;
+    color: white;
+}
+
+
+.btn-group button {
+    background-color: #5F9EA0; /* Green background */
+    border: 1px solid black; /* Green border */
+    color: white; /* White text */
+    padding: 5px 5px; /* Some padding */
+    font-size: 22px;
+    text-align: -moz-center;
+    vertical-align: middle;
+    cursor: pointer; /* Pointer/hand icon */
+    width: 100%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+}
+
+.btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #436e70;
+}
+
+
+.label {
+    color: white;
+    padding: 1px;
+    font-family: Arial
+
+}
+
+.date {background-color: #404040;
+    color: white;
+    border: 1px solid black;
+    font-size: 20px;
+    width: 100%;
+
+
+}
+
+h1{
+    font-size: 40px;
+}
+
+.blocksmall {
+    display: block;
+    width: 20%;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.blocksmall:hover {
+    background-color: #ddd;
+    color: black;
+}
+.block {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.block:hover {
+    background-color: #ddd;
+    color: black;
+}
+
 * {
     box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Float four columns side by side */
-.column {
-    float: left;
-    width: 50%;
-    padding: 0 10px;
-}
-
-/* Remove extra left and right margins, due to padding */
-.row {margin: 0 -5px;}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Responsive columns */
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-        display: block;
-        margin-bottom: 20px;
-    }
-}
-
-/* Style the counter cards */
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 16px;
-    margin-bottom: 20px;
-    text-align: center;
-    background-color: #f1f1f1;
-}
-.producthr {
-    clear: both;
-    border-bottom: 1px solid #f2f2f2;
-    line-height: 0;
-    font-size: 1px;
-}
-
-#leftcol {
-    float: left;
-    width: 582px;
-}
-
-#leftcol .headline {
-    height: 30px;
-    font: 15px Arial,sans-serif;
-    padding-top: 5px;
-    padding-left: 13px;
-}
-
-#leftcol .headlineright {
-    height: 30px;
-    text-align: right;
-    font: 15px Arial,sans-serif;
-    padding-top: 5px;
-    padding-right: 40px;
-    background-image: url('/gfx/headline_right.png');
-    background-repeat: no-repeat;
-}
-
-#leftcol .headlineright a {
-    color: #282828;
-    text-decoration: none;
-}
-
-#leftcol .fancyhr {
-    height: 30px;
-    background-image: url('/gfx/leftcol_fancy_hr.png');
-    background-repeat: no-repeat;
-}
-
-#leftcol .content {
-    margin: 10px;
-}
-
-#leftcol .content h1 {
-    font: 18px Tahoma,sans-serif;
-    font-weight: 700;
-    margin: 0px;
-}
-#leftcol .content h2 {
-    font: 13px Tahoma,sans-serif;
-    font-weight: 700;
-    margin-top: 10px;
-    margin-bottom: 0px;
-}
-#leftcol .content p,li,td,th {
-    font: 13px Arial,sans-serif;
-    color: #282828;
-    line-height: 20px;
-    margin-top: 0px;
-    margin-bottom: 10px;
 }

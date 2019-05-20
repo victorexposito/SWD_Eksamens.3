@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap-grid.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+
+
+<th:block th:include="fragment/nav :: nav"></th:block>
+
 <div class="menu">
     <table>
         <thead>

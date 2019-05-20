@@ -15,8 +15,9 @@ public class BookingRepository implements RepositoryI<Booking> {
 
     @Override
     public Booking create(Booking booking) {
-        String sql = "insert into booking (booking_id, signup_date, customer_id) values = (?, ?, (select customer_id from customer where customer_id = Last_insert_id";
-        template.update()
+        String sql = "insert into booking (signup_date, customer_id)\n" +
+                "select ?, max(customer_id) from customer";
+        template.update(sql, booking.getSignup_date(), booking.getCustomer_id());
 
         return booking;
 
@@ -39,4 +40,4 @@ public class BookingRepository implements RepositoryI<Booking> {
 
 
     }
-}
+

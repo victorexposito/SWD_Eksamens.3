@@ -15,14 +15,14 @@ public class Customer_BookingRepository {
     @Autowired
     private JdbcTemplate jdbc;
     private SqlRowSet rs;
-    ArrayList<Customer_Booking>customer_bookings;
+    //ArrayList<Customer_Booking>customer_bookings;
     public void test(){
 
     }
 
 
 public List<Customer_Booking> readMenu(){
-    customer_bookings.clear();
+    ArrayList<Customer_Booking> customer_bookings = new ArrayList<>();
     rs = jdbc.queryForRowSet("select cu.first_name, cu.last_name, cu.course_name, cu.location_name, b.signup_date\n" +
             "from booking b\n" +
             "join customer cu on b.customer_id = cu.customer_id\n" +

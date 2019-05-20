@@ -2,6 +2,7 @@ package kea.controller;
 
 
 import kea.model.Booking;
+import kea.model.Customer;
 import kea.model.Customer_Booking;
 import kea.repository.BookingRepository;
 import kea.repository.CustomerRepository;
@@ -38,11 +39,12 @@ public class CustomerController {
     }
 
     @PostMapping("/addcustomer")
-    public String addCustomer(@ModelAttribute Booking booking, Model model){
-        BR.create(booking);
+    public String addCustomer(@ModelAttribute Customer customer, Model model){
+        CR.create(customer);
         CBR.read();
-        model.addAttribute("booking", booking);
+        model.addAttribute("customer", customer);
         return "addcustomer";
     }
 
 }
+//alt der står i customer skal til en form på /addcustomer. med en knap til createv

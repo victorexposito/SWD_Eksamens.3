@@ -18,7 +18,7 @@ public class CustomerRepository implements RepositoryI<Customer>{
     public Customer create(Customer customer) {
 
         String sql = "insert into customer(customer_id, first_name, last_name, phone_number, email, city, zip_code, course_name, course_duration, course_price, location_name, location_address, location_city)\n" +
-                "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
         template.update(sql, customer.getCustomer_id(), customer.getFirst_name(), customer.getLast_name(), customer.getPhone_number(), customer.getEmail(), customer.getCity(), customer.getZip_code(), customer.getCourse_name(), customer.getCourse_duration(), customer.getCourse_price(), customer.getLocation_name(), customer.getLocation_address(), customer.getLocation_city());
 
         return customer;

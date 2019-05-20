@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap-grid.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
 </head>
 <body>
 
-
+    <th:block th:include="fragment/nav :: nav"></th:block>
 
 
 <div id="leftcol">

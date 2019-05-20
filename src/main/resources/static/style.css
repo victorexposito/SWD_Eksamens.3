@@ -68,15 +68,15 @@ table thead th { border-bottom: 1px solid #000; }
 
 
 .btn-group button {
-    background-color: #5F9EA0; /* Green background */
-    border: 1px solid black; /* Green border */
+    background-color: #253e91; /* Green background */
+    border: 2px solid #ffad10; /* Green border */
     color: white; /* White text */
     padding: 5px 5px; /* Some padding */
     font-size: 22px;
     text-align: -moz-center;
-    vertical-align: middle;
+    align-content: center;
     cursor: pointer; /* Pointer/hand icon */
-    width: 100%; /* Set a width if needed */
+    width: 20%; /* Set a width if needed */
     display: block; /* Make the buttons appear below each other */
 }
 

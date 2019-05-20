@@ -29,6 +29,7 @@ public class CustomerController {
      @Autowired
     Customer_BookingRepository CBR;
 
+     Booking booking = new Booking();
     List<Customer_Booking> cbooking = new ArrayList<>();
 
     @GetMapping("/addcustomer")
@@ -41,6 +42,7 @@ public class CustomerController {
     @PostMapping("/addcustomer")
     public String addCustomer(@ModelAttribute Customer customer, Model model){
         CR.create(customer);
+        BR.create(booking);
         CBR.read();
         model.addAttribute("customer", customer);
         return "addcustomer";

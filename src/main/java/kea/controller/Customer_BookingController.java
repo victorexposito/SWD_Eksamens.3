@@ -1,5 +1,6 @@
 package kea.controller;
 
+import kea.model.Customer_Booking;
 import kea.repository.Customer_BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,16 +27,16 @@ public class Customer_BookingController {
         return "adminmenu";
     }
 
-    @GetMapping("/")
+   /* @GetMapping("/deletecustomer")
     public String delete (){
         return null;// Der skal laves html delete side
     }
 
-    @GetMapping("/")
+    @GetMapping("/deletecustomer")
     public String delete(@RequestParam("id") int customer_id, Model model){
-    model.addAttribute("customer_booking", customer_bookingRepository.read(customer_id));
+    model.addAttribute("customer_booking", customer_bookingRepository.read());
     return null; //der skal laves ny html deteleside
-    }
+    }*/
 
 
 

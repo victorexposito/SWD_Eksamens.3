@@ -32,7 +32,7 @@ public class CustomerController {
 
     @GetMapping("/addcustomer")
     public String readAllCustomers(Model model){
-        CBR.readMenu();
+        CBR.read();
         model.addAttribute("cbooking", cbooking);
         return "addcustomer";
     }
@@ -40,7 +40,7 @@ public class CustomerController {
     @PostMapping("/addcustomer")
     public String addCustomer(@ModelAttribute Booking booking, Model model){
         BR.create(booking);
-        CBR.readMenu();
+        CBR.read();
         model.addAttribute("booking", booking);
         return "addcustomer";
     }

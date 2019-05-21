@@ -20,7 +20,7 @@ public class BookingRepository implements RepositoryI<Booking> {
                 "select ?, max(customer_id) from customer";
         template.update(sql, booking.getSignup_date(), booking.getCustomer_id());
 
-        return booking;s
+        return booking;kjh
 
     }
 

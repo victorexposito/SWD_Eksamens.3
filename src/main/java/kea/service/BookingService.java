@@ -29,7 +29,7 @@ public class BookingService implements ServiceI<Booking> {
 
     @Override
     public Booking delete(Booking booking) {
-        return null;
+        return BR.delete(booking);
     }
 
     @Override

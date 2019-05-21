@@ -32,10 +32,8 @@ public class Customer_BookingController {
 
     @GetMapping("/")
     public String delete(@RequestParam("customer_id") int id, Model model){
-    model.addAttribute("customer_booking", customer_bookingRepository.readId(id));
+    model.addAttribute("booking", customer_bookingRepository.readId(id));
     return null; //der skal laves ny html deteleside
     }
-
-
 
 }

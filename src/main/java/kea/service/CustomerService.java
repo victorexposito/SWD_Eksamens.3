@@ -19,7 +19,7 @@ public class CustomerService implements ServiceI<Customer> {
     }
 
     @Override
-    public Customer read(Customer customer) {
+    public Customer readId(Customer customer) {
         return null;
     }
 
@@ -30,11 +30,12 @@ public class CustomerService implements ServiceI<Customer> {
 
     @Override
     public Customer delete(Customer customer) {
-        return null;
+
+        return CR.delete(customer);
     }
 
     @Override
-    public List readAll() {
+    public List<Customer> read() {
         return null;
     }
 }

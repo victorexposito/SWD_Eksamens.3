@@ -9,7 +9,7 @@ import java.util.List;
 public class Customer_BookingService implements ServiceI<Customer_Booking> {
 
     @Autowired
-    Customer_BookingRepository CB = new Customer_BookingRepository();
+    Customer_BookingRepository CBR = new Customer_BookingRepository();
 
 
     @Override
@@ -29,7 +29,7 @@ public class Customer_BookingService implements ServiceI<Customer_Booking> {
 
     @Override
     public Customer_Booking delete(Customer_Booking customer_booking) {
-        return CB.delete(customer_booking);
+        return CBR.delete(customer_booking);
     }
 
     @Override

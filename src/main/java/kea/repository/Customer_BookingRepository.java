@@ -70,7 +70,7 @@ public class Customer_BookingRepository implements RepositoryI<Customer_Booking>
     @Override
     public Customer_Booking delete(Customer_Booking customer_booking) {
 
-        int result = jdbc.update("DELETE FROM customer_booking WHERE customer_id = ?");
+        int result = jdbc.update("DELETE FROM  booking WHERE customer_id = ?");
 
         return customer_booking;
     }

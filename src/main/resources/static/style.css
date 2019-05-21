@@ -15,14 +15,11 @@ body {
 }
 table {
     padding: 10px;
-    border-spacing:40 5px;
     border-collapse: separate;
+    border-spacing:100px 5px;
 
 }
 
-td{
-
-}
 
 table thead th { border-bottom: 1px solid #000; }
 

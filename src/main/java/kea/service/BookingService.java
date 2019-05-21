@@ -1,6 +1,5 @@
 package kea.service;
 
-import kea.model.Booking;
 import kea.repository.BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

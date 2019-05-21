@@ -1,6 +1,5 @@
 package kea.service;
 
-import kea.model.Customer_Booking;
 import kea.repository.Customer_BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 

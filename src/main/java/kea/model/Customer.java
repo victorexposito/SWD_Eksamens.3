@@ -1,5 +1,11 @@
 package kea.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
+
+import static org.springframework.format.annotation.DateTimeFormat.ISO.DATE;
+
 public class Customer {
 
     private int customer_id;
@@ -12,14 +18,14 @@ public class Customer {
     private String course_name;
     private String course_duration;
     private String course_price;
-    private String location_name;
-    private String location_address;
-    private String location_city;
+    private String location;
+    @DateTimeFormat(iso = DATE)
+    private Date signup_date;
 
     public Customer() {
     }
 
-    public Customer(int customer_id, String first_name, String last_name, String phone_number, String email, String city, String zip_code, String course_name, String course_duration, String course_price, String location_name, String location_address, String location_city) {
+    public Customer(int customer_id, String first_name, String last_name, String phone_number, String email, String city, String zip_code, String course_name, String course_duration, String course_price, String location, Date signup_date) {
         this.customer_id = customer_id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -30,9 +36,10 @@ public class Customer {
         this.course_name = course_name;
         this.course_duration = course_duration;
         this.course_price = course_price;
-        this.location_name = location_name;
-        this.location_address = location_address;
-        this.location_city = location_city;
+        this.location = location;
+        this.signup_date = signup_date;
+
+
     }
 
     public int getCustomer_id() {
@@ -115,27 +122,19 @@ public class Customer {
         this.course_price = course_price;
     }
 
-    public String getLocation_name() {
-        return location_name;
+    public String getLocation() {
+        return location;
     }
 
-    public void setLocation_name(String location_name) {
-        this.location_name = location_name;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public String getLocation_address() {
-        return location_address;
+    public Date getSignup_date() {
+        return signup_date;
     }
 
-    public void setLocation_address(String location_address) {
-        this.location_address = location_address;
-    }
-
-    public String getLocation_city() {
-        return location_city;
-    }
-
-    public void setLocation_city(String location_city) {
-        this.location_city = location_city;
+    public void setSignup_date(Date signup_date) {
+        this.signup_date = signup_date;
     }
 }

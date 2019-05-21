@@ -1,9 +1,7 @@
 package kea.controller;
 
 
-import kea.model.Booking;
 import kea.model.Customer;
-import kea.model.Customer_Booking;
 import kea.repository.BookingRepository;
 import kea.repository.CustomerRepository;
 import kea.repository.Customer_BookingRepository;
@@ -29,7 +27,7 @@ public class CustomerController {
      @Autowired
     Customer_BookingRepository CBR;
 
-     Booking booking = new Booking();
+     //Booking booking = new Booking();
     List<Customer_Booking> cbooking = new ArrayList<>();
 
     @GetMapping("/addcustomer")
@@ -40,11 +38,12 @@ public class CustomerController {
     }
 
     @PostMapping("/addcustomer")
-    public String addCustomer(@ModelAttribute Customer customer, Model model){
+    public String addCustomer(@ModelAttribute Customer customer, Booking booking, Model model){
         CR.create(customer);
         BR.create(booking);
         CBR.read();
         model.addAttribute("customer", customer);
+        model.addAttribute("booking", booking);
         return "addcustomer";
     }
 

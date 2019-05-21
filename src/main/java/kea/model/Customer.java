@@ -25,6 +25,15 @@ public class Customer {
     public Customer() {
     }
 
+    public Customer(int customer_id, String first_name, String last_name, String course_name, String location, Date signup_date) {
+        this.customer_id = customer_id;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.course_name = course_name;
+        this.location = location;
+        this.signup_date = signup_date;
+    }
+
     public Customer(int customer_id, String first_name, String last_name, String phone_number, String email, String city, String zip_code, String course_name, String course_duration, String course_price, String location, Date signup_date) {
         this.customer_id = customer_id;
         this.first_name = first_name;

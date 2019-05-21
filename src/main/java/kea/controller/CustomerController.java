@@ -2,9 +2,7 @@ package kea.controller;
 
 
 import kea.model.Customer;
-import kea.repository.BookingRepository;
 import kea.repository.CustomerRepository;
-import kea.repository.Customer_BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,30 +19,25 @@ public class CustomerController {
     @Autowired
     CustomerRepository CR;
 
-     @Autowired
-    BookingRepository BR;
-
-     @Autowired
-    Customer_BookingRepository CBR;
-
-     //Booking booking = new Booking();
-    List<Customer_Booking> cbooking = new ArrayList<>();
-
-    @GetMapping("/addcustomer")
+   /* @GetMapping("/addcustomer")
     public String readAllCustomers(Model model){
-        CBR.read();
+        CR.read();
         model.addAttribute("cbooking", cbooking);
         return "addcustomer";
-    }
+    }*/
 
     @PostMapping("/addcustomer")
-    public String addCustomer(@ModelAttribute Customer customer, Booking booking, Model model){
+    public String addCustomer(@ModelAttribute Customer customer, Model model){
         CR.create(customer);
-        BR.create(booking);
-        CBR.read();
+        CR.read();
         model.addAttribute("customer", customer);
-        model.addAttribute("booking", booking);
+
         return "addcustomer";
+    }
+    @GetMapping("/adminmenu")
+    public String index(Model model){
+        model.addAttribute("customer_booking", CR.read());
+        return "adminmenu";
     }
 
 }

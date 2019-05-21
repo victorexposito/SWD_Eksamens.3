@@ -36,7 +36,7 @@ public class CustomerController {
     }
     @GetMapping("/adminmenu")
     public String index(Model model){
-        model.addAttribute("customer_booking", CR.read());
+        model.addAttribute("customer", CR.read());
         return "adminmenu";
     }
 

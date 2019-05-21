@@ -26,12 +26,12 @@
         </thead>
         <tbody>
 
-        <tr th:each="Customer_Booking: ${customer_booking}">
-            <td th:text="${Customer_Booking.first_name}"/>
-            <td th:text="${Customer_Booking.last_name}"/>
-            <td th:text="${Customer_Booking.course_name}"/>
-            <td th:text="${Customer_Booking.location_name}"/>
-            <td th:text="${Customer_Booking.signup_date}"/>
+        <tr th:each="Customer: ${customer}">
+            <td th:text="${Customer.first_name}"/>
+            <td th:text="${Customer.last_name}"/>
+            <td th:text="${Customer.course_name}"/>
+            <td th:text="${Customer.location}"/>
+            <td th:text="${Customer.signup_date}"/>
         </tr>
         </tbody>
     </table>

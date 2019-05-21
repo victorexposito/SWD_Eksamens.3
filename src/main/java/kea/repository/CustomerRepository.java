@@ -30,7 +30,7 @@ public class CustomerRepository implements RepositoryI<Customer> {
     public List<Customer> read() {
         ArrayList<Customer> customers = new ArrayList<>();
         rs = jdbc.queryForRowSet("select customer_id, first_name, last_name, course_name, location, signup_date\n" +
-                "from customer b\n" +
+                "from customer\n" +
                 "where customer_id > 0\n" +
                 "Order by signup_date desc");
         while (rs.next()) {

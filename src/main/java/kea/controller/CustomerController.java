@@ -23,7 +23,6 @@ public class CustomerController {
 
     @GetMapping("/addcustomer")
     public String addCustomer(Model model){
-        customer = CR.readAll();
         model.addAttribute("customer", customer);
         return "addcustomer";
     }

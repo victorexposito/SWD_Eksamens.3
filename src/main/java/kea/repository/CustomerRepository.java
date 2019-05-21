@@ -22,7 +22,7 @@ public class CustomerRepository implements RepositoryI<Customer> {
     public Customer create(Customer customer) {
 
         String sql = "insert into customer(customer_id, first_name, last_name, phone_number, email, city, zipcode, course, location, signup_date)\n" +
-                "values (?,?,?,?,?,?,?,?,?,?,?,?)";
+                "values (?,?,?,?,?,?,?,?,?,?)";
         jdbc.update(sql, customer.getCustomer_id(), customer.getFirst_name(), customer.getLast_name(), customer.getPhone_number(), customer.getEmail(), customer.getCity(), customer.getZipcode(), customer.getCourse(), customer.getLocation(),customer.getSignup_date());
 
         return customer;

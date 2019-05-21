@@ -17,9 +17,13 @@ table {
     padding: 10px;
     border-collapse: separate;
     border-spacing:100px 5px;
+    margin-right: 2000px;
 
 }
-
+.mytable{
+    width: 100%;
+    white-space: nowrap;
+}
 
 table thead th { border-bottom: 1px solid #000; }
 

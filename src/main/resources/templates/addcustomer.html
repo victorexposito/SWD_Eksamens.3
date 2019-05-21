@@ -16,25 +16,30 @@
         <table style="width: 70%">
 
             <thead>
-            <th style="width: 20%">First name</th>
-            <th style="width: 30%">Last name</th>
-            <th style="width: 10%">Phone number</th>
+            <th style="width: 15%">Kunde id</th>
+            <th style="width: 15%">Navn</th>
+            <th style="width: 15%">Efternavn</th>
+            <th style="width: 15%">Telefon nummer</th>
+            <th style="width: 15%">E-mail</th>
+            <th style="width: 15%">Lokation</th>
+            <th style="width: 15%">Postnummer</th>
+            <th style="width: 15%">kørepakke</th>
+            <th style="width: 15%">Lokation</th>
+            <th style="width: 15%">Dato tilføjet</th>
+
             </tr>
             </thead>
             <tbody>
             <tr th:each="customer: ${customer}">
-                <td th:text="${customer.id}"></td>
+                <td th:text="${customer.customer_id}"></td>
                 <td th:text="${customer.first_name}"></td>
                 <td th:text="${customer.last_name}"></td>
                 <td th:text="${customer.phone_number}"></td>
                 <td th:text="${customer.email}"></td>
                 <td th:text="${customer.city}"></td>
-                <td th:text="${customer.zip_code}"></td>
+                <td th:text="${customer.zipcode}"></td>
                 <td th:text="${customer.course}"></td>
-                <td th:text="${customer.location_name}"></td>
-                <td th:text="${customer.location_address}"></td>
-                <td th:text="${customer.location_city}"></td>
-                <td th:text="${customer.booking_id}"></td>
+                <td th:text="${customer.location}"></td>
                 <td th:text="${customer.signup_date}"></td>
 
             </tr>
@@ -50,7 +55,7 @@
             <input type="text" name="phone_number" placeholder="Phone number">
             <input type="text" name="email" placeholder="email">
             <input type="text" name="city" placeholder="By">
-            <input type="text" name="zip_code" placeholder="postnummer">
+            <input type="text" name="zipcode" placeholder="postnummer">
             <input type="text" name="course" placeholder="Kørepakke"><br>
             <input type="radio" name="location" value="Amager"><label>Amager</label>
             <input type="radio" name="location" value="København"><label>København</label><br>

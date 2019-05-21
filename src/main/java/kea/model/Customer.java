@@ -14,7 +14,7 @@ public class Customer {
     private String phone_number;
     private String email;
     private String city;
-    private String zip_code;
+    private String zipcode;
     private String course;
     private String location;
     @DateTimeFormat(iso = DATE)
@@ -32,14 +32,14 @@ public class Customer {
         this.signup_date = signup_date;
     }
 
-    public Customer(int customer_id, String first_name, String last_name, String phone_number, String email, String city, String zip_code, String course, String location, Date signup_date) {
+    public Customer(int customer_id, String first_name, String last_name, String phone_number, String email, String city, String zipcode, String course, String location, Date signup_date) {
         this.customer_id = customer_id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.phone_number = phone_number;
         this.email = email;
         this.city = city;
-        this.zip_code = zip_code;
+        this.zipcode = zipcode;
         this.course = course;
         this.location = location;
         this.signup_date = signup_date;
@@ -93,12 +93,12 @@ public class Customer {
         this.city = city;
     }
 
-    public String getZip_code() {
-        return zip_code;
+    public String getZipcode() {
+        return zipcode;
     }
 
-    public void setZip_code(String zip_code) {
-        this.zip_code = zip_code;
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
     }
 
     public String getCourse() {

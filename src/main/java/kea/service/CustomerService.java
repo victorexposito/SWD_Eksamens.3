@@ -35,6 +35,11 @@ public class CustomerService implements ServiceI<Customer> {
     }
 
     @Override
+    public List<Customer> readAll(){
+        return CR.readAll();
+    }
+
+    @Override
     public List<Customer> read() {
         return null;
     }

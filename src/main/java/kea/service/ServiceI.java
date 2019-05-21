@@ -9,4 +9,5 @@ public interface ServiceI<T> {
     public T update(T t);
     public T delete(T t);
     public List<T> read();
+    public List<T> readAll();
 }

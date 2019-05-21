@@ -2,9 +2,7 @@ package kea.repository;
 
 import kea.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Repository;
 
@@ -21,18 +19,9 @@ public class CustomerRepository implements RepositoryI<Customer> {
     @Override
     public Customer create(Customer customer) {
 
-        String sql = "insert into customer(customer_id, first_name, last_name, phone_number, email, city, zipcode, course, location, signup_date)\n" +
-                "values (?,?,?,?,?,?,?,?,?,?)";
+        String sql = "insert into customer(customer_id, first_name, last_name, phone_number, email, city, zip_code, course, location, signup_date)\n" +
+                "values (?,?,?,?,?,?,?,?,?,?,?,?)";
         jdbc.update(sql, customer.getCustomer_id(), customer.getFirst_name(), customer.getLast_name(), customer.getPhone_number(), customer.getEmail(), customer.getCity(), customer.getZipcode(), customer.getCourse(), customer.getLocation(),customer.getSignup_date());
-
-        return customer;
-    }
-
-    public List readAll(){
-
-        String sql = "select * from customer order by customer_id";
-        RowMapper<Customer> rowMapper = new BeanPropertyRowMapper<>(Customer.class);
-        List<Customer> customer = jdbc.query(sql, rowMapper);
 
         return customer;
     }
@@ -60,7 +49,21 @@ public class CustomerRepository implements RepositoryI<Customer> {
 
     @Override
     public Customer readId(int id) {
-        return null;
+
+        rs = jdbc.queryForRowSet("select * from customer where customer_id = '"+ id +"'");
+        while (rs.next()){
+            return new Customer(rs.getInt("customer_id"),
+                rs.getString("first_name"),
+                rs.getString("last_name"),
+                rs.getString("phone_number"),
+                rs.getString("email"),
+                rs.getString("city"),
+                rs.getString("zip_code"),
+                rs.getString("course"),
+                rs.getString("location"),
+                rs.getDate("signup_date"));
+        }
+        return new Customer();
     }
 
     @Override
@@ -69,9 +72,9 @@ public class CustomerRepository implements RepositoryI<Customer> {
     }
 
     @Override
-    public Customer delete(Customer customer) {
-        int result = jdbc.update("DELETE FROM  customer WHERE customer_id = ?");
-        return customer;
+    public boolean delete(int id){
+        int result = jdbc.update("DELETE FROM  customer WHERE customer_id = '" + id + "'");
+        return true;
     }
 }
 

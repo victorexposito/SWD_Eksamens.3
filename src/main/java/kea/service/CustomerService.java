@@ -29,14 +29,14 @@ public class CustomerService implements ServiceI<Customer> {
     }
 
     @Override
-    public Customer delete(Customer customer) {
+    public boolean delete(int id) {
 
-        return CR.delete(customer);
+        return true;
     }
 
     @Override
     public List<Customer> readAll(){
-        return CR.readAll();
+        return null;
     }
 
     @Override

@@ -22,22 +22,20 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="cbooking: ${cbooking}">
-                <td th:text="${cbooking.id}"></td>
-                <td th:text="${cbooking.first_name}"></td>
-                <td th:text="${cbooking.last_name}"></td>
-                <td th:text="${cbooking.phone_number}"></td>
-                <td th:text="${cbooking.email}"></td>
-                <td th:text="${cbooking.city}"></td>
-                <td th:text="${cbooking.zip_code}"></td>
-                <td th:text="${cbooking.course_name}"></td>
-                <td th:text="${cbooking.course_duration}"></td>
-                <td th:text="${cbooking.course_price}"></td>
-                <td th:text="${cbooking.location_name}"></td>
-                <td th:text="${cbooking.location_address}"></td>
-                <td th:text="${cbooking.location_city}"></td>
-                <td th:text="${cbooking.booking_id}"></td>
-                <td th:text="${cbooking.signup_date}"></td>
+            <tr th:each="customer: ${customer}">
+                <td th:text="${customer.id}"></td>
+                <td th:text="${customer.first_name}"></td>
+                <td th:text="${customer.last_name}"></td>
+                <td th:text="${customer.phone_number}"></td>
+                <td th:text="${customer.email}"></td>
+                <td th:text="${customer.city}"></td>
+                <td th:text="${customer.zip_code}"></td>
+                <td th:text="${customer.course}"></td>
+                <td th:text="${customer.location_name}"></td>
+                <td th:text="${customer.location_address}"></td>
+                <td th:text="${customer.location_city}"></td>
+                <td th:text="${customer.booking_id}"></td>
+                <td th:text="${customer.signup_date}"></td>
 
             </tr>
 
@@ -53,12 +51,11 @@
             <input type="text" name="email" placeholder="email">
             <input type="text" name="city" placeholder="By">
             <input type="text" name="zip_code" placeholder="postnummer">
-            <input type="text" name="course_name" placeholder="kørepakke">
-            <input type="text" name="course_duration" placeholder="Pakke længde">
-            <input type="text" name="course_price" placeholder="Pris">
-            <input type="text" name="location_name" placeholder="Lokation">
-            <input type="text" name="location_address" placeholder="Lokation navn">
-            <input type="text" name="location_city" placeholder="Lokation by">
+            <input type="text" name="course" placeholder="Kørepakke"><br>
+            <input type="radio" name="location" value="Amager"><label>Amager</label>
+            <input type="radio" name="location" value="København"><label>København</label><br>
+            <input type="radio" name="location" value="Søborg"><label>Søborg</label>
+            <input type="radio" name="location" value="Århus"><label>Århus</label><br>
             <input type="submit" value="Opret ny kunde" class="btn btn-create">
         </form>
         <a th:href="@{'/'}">

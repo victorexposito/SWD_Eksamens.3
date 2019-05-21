@@ -19,12 +19,14 @@ public class CustomerController {
     @Autowired
     CustomerRepository CR;
 
-   /* @GetMapping("/addcustomer")
-    public String readAllCustomers(Model model){
+    private List<Customer> customer = new ArrayList<>();
+
+    @GetMapping("/addcustomer")
+    public String addCustomer(Model model){
         CR.read();
-        model.addAttribute("cbooking", cbooking);
+        model.addAttribute("customer", customer);
         return "addcustomer";
-    }*/
+    }
 
     @PostMapping("/addcustomer")
     public String addCustomer(@ModelAttribute Customer customer, Model model){

@@ -19,9 +19,9 @@ public class CustomerRepository implements RepositoryI<Customer> {
     @Override
     public Customer create(Customer customer) {
 
-        String sql = "insert into customer(customer_id, first_name, last_name, phone_number, email, city, zip_code, course_name, course_duration, course_price, location_name, location_address, location_city)\n" +
-                "values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
-        jdbc.update(sql, customer.getCustomer_id(), customer.getFirst_name(), customer.getLast_name(), customer.getPhone_number(), customer.getEmail(), customer.getCity(), customer.getZip_code(), customer.getCourse_name(), customer.getCourse_duration(), customer.getCourse_price(), customer.getLocation());
+        String sql = "insert into customer(customer_id, first_name, last_name, phone_number, email, city, zip_code, course, location, signup_date)\n" +
+                "values (?,?,?,?,?,?,?,?,?,?,?,?)";
+        jdbc.update(sql, customer.getCustomer_id(), customer.getFirst_name(), customer.getLast_name(), customer.getPhone_number(), customer.getEmail(), customer.getCity(), customer.getZip_code(), customer.getCourse(), customer.getLocation(),customer.getSignup_date());
 
         return customer;
     }
@@ -29,7 +29,7 @@ public class CustomerRepository implements RepositoryI<Customer> {
     @Override
     public List<Customer> read() {
         ArrayList<Customer> customers = new ArrayList<>();
-        rs = jdbc.queryForRowSet("select customer_id, first_name, last_name, course_name, location, signup_date\n" +
+        rs = jdbc.queryForRowSet("select customer_id, first_name, last_name, course, location, signup_date\n" +
                 "from customer\n" +
                 "where customer_id > 0\n" +
                 "Order by signup_date desc");
@@ -37,7 +37,7 @@ public class CustomerRepository implements RepositoryI<Customer> {
             customers.add(new Customer(rs.getInt("customer_id"),
                     rs.getString("first_name"),
                     rs.getString("last_name"),
-                    rs.getString("course_name"),
+                    rs.getString("course"),
                     rs.getString("location"),
                     rs.getDate("signup_date")));
 

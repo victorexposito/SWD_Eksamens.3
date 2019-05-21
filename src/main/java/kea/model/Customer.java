@@ -15,9 +15,7 @@ public class Customer {
     private String email;
     private String city;
     private String zip_code;
-    private String course_name;
-    private String course_duration;
-    private String course_price;
+    private String course;
     private String location;
     @DateTimeFormat(iso = DATE)
     private Date signup_date;
@@ -25,16 +23,16 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(int customer_id, String first_name, String last_name, String course_name, String location, Date signup_date) {
+    public Customer(int customer_id, String first_name, String last_name, String course, String location, Date signup_date) {
         this.customer_id = customer_id;
         this.first_name = first_name;
         this.last_name = last_name;
-        this.course_name = course_name;
+        this.course = course;
         this.location = location;
         this.signup_date = signup_date;
     }
 
-    public Customer(int customer_id, String first_name, String last_name, String phone_number, String email, String city, String zip_code, String course_name, String course_duration, String course_price, String location, Date signup_date) {
+    public Customer(int customer_id, String first_name, String last_name, String phone_number, String email, String city, String zip_code, String course, String location, Date signup_date) {
         this.customer_id = customer_id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -42,13 +40,9 @@ public class Customer {
         this.email = email;
         this.city = city;
         this.zip_code = zip_code;
-        this.course_name = course_name;
-        this.course_duration = course_duration;
-        this.course_price = course_price;
+        this.course = course;
         this.location = location;
         this.signup_date = signup_date;
-
-
     }
 
     public int getCustomer_id() {
@@ -107,28 +101,12 @@ public class Customer {
         this.zip_code = zip_code;
     }
 
-    public String getCourse_name() {
-        return course_name;
+    public String getCourse() {
+        return course;
     }
 
-    public void setCourse_name(String course_name) {
-        this.course_name = course_name;
-    }
-
-    public String getCourse_duration() {
-        return course_duration;
-    }
-
-    public void setCourse_duration(String course_duration) {
-        this.course_duration = course_duration;
-    }
-
-    public String getCourse_price() {
-        return course_price;
-    }
-
-    public void setCourse_price(String course_price) {
-        this.course_price = course_price;
+    public void setCourse(String course) {
+        this.course = course;
     }
 
     public String getLocation() {

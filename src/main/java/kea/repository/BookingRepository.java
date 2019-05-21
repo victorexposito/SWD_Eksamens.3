@@ -26,7 +26,7 @@ public class BookingRepository implements RepositoryI<Booking> {
     }
 
     @Override
-    public Booking read(Booking booking) {
+    public Booking readId(int id) {
         return null;
     }
 

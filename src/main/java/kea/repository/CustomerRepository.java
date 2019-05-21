@@ -25,7 +25,7 @@ public class CustomerRepository implements RepositoryI<Customer>{
     }
 
     @Override
-    public Customer read(Customer customer) {
+    public Customer readId(int id) {
         return null;
     }
 

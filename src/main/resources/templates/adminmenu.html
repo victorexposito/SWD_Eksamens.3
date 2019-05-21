@@ -32,6 +32,13 @@
             <td th:text="${Customer.course}"/>
             <td th:text="${Customer.location}"/>
             <td th:text="${Customer.signup_date}"/>
+            <td>
+                <a th:href="@{delete?id='+${Customer.customer_id}}">
+                    <button class="btn-delete">Delete</button>
+
+                </a>
+
+            </td>
         </tr>
         </tbody>
     </table>

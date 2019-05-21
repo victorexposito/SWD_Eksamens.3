@@ -60,7 +60,21 @@ public class CustomerRepository implements RepositoryI<Customer> {
 
     @Override
     public Customer readId(int id) {
-        return null;
+
+        rs = jdbc.queryForRowSet("select * from customer where customer_id = '"+ id +"'");
+        while (rs.next()){
+            return new Customer(rs.getInt("customer_id"),
+                rs.getString("first_name"),
+                rs.getString("last_name"),
+                rs.getString("phone_number"),
+                rs.getString("email"),
+                rs.getString("city"),
+                rs.getString("zip_code"),
+                rs.getString("course"),
+                rs.getString("location"),
+                rs.getDate("signup_date"));
+        }
+        return new Customer();
     }
 
     @Override

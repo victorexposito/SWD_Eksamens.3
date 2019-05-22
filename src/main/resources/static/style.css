@@ -24,6 +24,10 @@ body {
     background-color: green;
 }
 
+.btn-details {
+    background-color: #17a2b8!important;
+    color: black;
+}
 
 .btn-update {
     background-color: #4cae4c!important;

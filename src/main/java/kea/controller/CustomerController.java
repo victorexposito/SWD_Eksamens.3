@@ -77,5 +77,11 @@ public class CustomerController {
         return "adminmenu";
     }
 
+    @GetMapping("/details")
+    public String details(@RequestParam("customer_id") int id, Model model) {
+        model.addAttribute("customer", CR.readId(id));
+        return "/details";
+    }
+
 }
 //alt der står i customer skal til en form på /addcustomer. med en knap til createv

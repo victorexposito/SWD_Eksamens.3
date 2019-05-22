@@ -40,6 +40,10 @@
                 <a th:href="@{editcustomer?customer_id='+${Customer.customer_id}}">
                     <button class="btn-update">Update</button>
                 </a>
+
+                <a th:href="@{'details?customer_id='+${Customer.customer_id}}">
+                    <button class="btn-details">Details</button>
+                </a>
             </td>
 
         </tr>

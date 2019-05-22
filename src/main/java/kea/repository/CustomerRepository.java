@@ -58,7 +58,7 @@ public class CustomerRepository implements RepositoryI<Customer> {
                 rs.getString("phone_number"),
                 rs.getString("email"),
                 rs.getString("city"),
-                rs.getString("zip_code"),
+                rs.getString("zipcode"),
                 rs.getString("course"),
                 rs.getString("location"),
                 rs.getDate("signup_date"));

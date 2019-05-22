@@ -19,7 +19,7 @@ public class CustomerRepository implements RepositoryI<Customer> {
     @Override
     public Customer create(Customer customer) {
 
-        String sql = "insert into customer(customer_id, first_name, last_name, phone_number, email, city, zip_code, course, location, signup_date)\n" +
+        String sql = "insert into customer(customer_id, first_name, last_name, phone_number, email, city, zipcode, course, location, signup_date)\n" +
                 "values (?,?,?,?,?,?,?,?,?,?,?,?)";
         jdbc.update(sql, customer.getCustomer_id(), customer.getFirst_name(), customer.getLast_name(), customer.getPhone_number(), customer.getEmail(), customer.getCity(), customer.getZipcode(), customer.getCourse(), customer.getLocation(),customer.getSignup_date());
 
@@ -58,7 +58,7 @@ public class CustomerRepository implements RepositoryI<Customer> {
                 rs.getString("phone_number"),
                 rs.getString("email"),
                 rs.getString("city"),
-                rs.getString("zip_code"),
+                rs.getString("zipcode"),
                 rs.getString("course"),
                 rs.getString("location"),
                 rs.getDate("signup_date"));
@@ -68,7 +68,9 @@ public class CustomerRepository implements RepositoryI<Customer> {
 
     @Override
     public Customer update(Customer customer) {
-        return null;
+        String sql = "UPDATE customer SET phone_number = ?, email = ?, city = ?, zipcode = ?, course = ?, location = ? WHERE customer_id = ?";
+        jdbc.update(sql, customer.getPhone_number(), customer.getEmail(), customer.getCity(), customer.getZipcode(), customer.getCourse(), customer.getLocation(), customer.getCustomer_id());
+        return customer;
     }
 
     @Override

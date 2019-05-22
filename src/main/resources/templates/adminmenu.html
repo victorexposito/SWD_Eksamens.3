@@ -37,8 +37,11 @@
                     <button class="btn-delete">Delete</button>
 
                 </a>
-
+                <a th:href="@{editcustomer?customer_id='+${Customer.customer_id}}">
+                    <button class="btn-update">Update</button>
+                </a>
             </td>
+
         </tr>
         </tbody>
     </table>

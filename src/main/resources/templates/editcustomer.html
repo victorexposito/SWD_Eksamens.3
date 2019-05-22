@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit a customer</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap-grid.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+</head>
+<body>
+
+<th:block th:include="fragment/nav :: nav"></th:block>
+
+
+<div align="center">
+    <h1>Updater en kunde</h1>
+
+    <form action="/editcustomer" method="post">
+        <input type="hidden" th:value="${customer.customer_id}" name="customer_id">
+        <label>Telefon nummber</label>
+        <input type="text" name ="phone_number">
+        <label>Email</label>
+        <input type="text" name ="email">
+        <label>By</label>
+        <input type="text" name ="city">
+        <label>Postnummer</label>
+        <input type="text" name ="zipcode">
+        <label>Kørepakke</label>
+        <input type="text" name ="course">
+        <label>Lokation</label>
+        <input type="text" name ="location"
+        >
+
+        <input type="submit" value="Opdater kunde" class="btn-ed">
+    </form>
+    <a th:href="@{'/'}">
+        <button class="btn btn-ed">Back</button>
+    </a>
+</div>
+
+
+</body>
+</html>

@@ -9,6 +9,11 @@ body {
     color: black;
     }
 
+.btn-update {
+    background-color: #4cae4c!important;
+    color: #122b40;
+}
+
 .box1 {
     background: #ddd;
     padding: 20px;

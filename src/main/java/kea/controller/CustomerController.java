@@ -29,6 +29,7 @@ public class CustomerController {
         return "addcustomer";
     }*/
 
+
     @PostMapping("/addcustomer")
     public String addCustomer(@ModelAttribute Customer customer, Model model){
         CR.create(customer);
@@ -53,6 +54,27 @@ public class CustomerController {
     public String delete(@ModelAttribute Customer customer) {
         CR.delete(customer.getCustomer_id());
         return "redirect:/adminmenu";
+    }
+
+    @GetMapping("/editcustomer")
+    public String updateCustomer(@RequestParam("customer_id") int id, Model model){
+        Customer customerUpdate = new Customer();
+        for(Customer i : customer){
+            if(i.getCustomer_id()==id){
+                customerUpdate = i;
+            }
+        }
+        model.addAttribute("customer", customerUpdate);
+
+        return "editcustomer";
+    }
+
+    @PostMapping("/editcustomer")
+    public String editCustomerNow(@ModelAttribute Customer customerEdit, Model model){
+        CR.update(customerEdit);
+        customer = CR.read();
+        model.addAttribute("customer", customer);
+        return "adminmenu";
     }
 
 }

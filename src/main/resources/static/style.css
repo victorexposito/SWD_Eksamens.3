@@ -3,11 +3,27 @@ body {
     font-family: Arial, Helvetica;
     background-color: #f2f2f2;
 }
-
-.btn-delete {
-    background-color: #dc3545!important;
+.btn {
+    background-color: white;
+    border: 1px;
     color: black;
-    }
+    padding: 10px 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 5px; /* https://www.w3schools.com/css/css3_borders.asp */
+    box-shadow: 1px 1px 1px #888888;
+    -webkit-transition-duration: 0.1s; /* Safari */
+    transition-duration: 0.1s;
+}
+.delete{
+    background-color: red;
+}
+.yes{
+    background-color: green;
+}
+
 
 .box1 {
     background: #ddd;

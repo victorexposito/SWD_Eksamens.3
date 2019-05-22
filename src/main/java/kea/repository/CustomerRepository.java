@@ -67,10 +67,17 @@ public class CustomerRepository implements RepositoryI<Customer> {
     }
 
     @Override
-    public Customer update(Customer customer) {
-        String sql = "UPDATE customer SET phone_number = ?, email = ?, city = ?, zipcode = ?, course = ?, location = ? WHERE customer_id = ?";
-        jdbc.update(sql, customer.getPhone_number(), customer.getEmail(), customer.getCity(), customer.getZipcode(), customer.getCourse(), customer.getLocation(), customer.getCustomer_id());
-        return customer;
+    public boolean update(Customer customer){
+
+         jdbc.update("UPDATE  customer SET " +
+                "phone_number ='" + customer.getPhone_number() + "' , " +
+                "email = '" + customer.getEmail() + "' , " +
+                "city =  '" + customer.getCity() + "' , " +
+                "zipcode = '" + customer.getZipcode() + "' , " +
+                "course = '" + customer.getCourse()  + "' ," +
+                "location = '" + customer.getLocation() +
+                "' WHERE customer_id = '" + customer.getCustomer_id() + "'");
+        return true;
     }
 
     @Override
@@ -78,5 +85,6 @@ public class CustomerRepository implements RepositoryI<Customer> {
         jdbc.update("DELETE FROM customer WHERE customer_id = '" + id + "'");
         return true;
     }
+
 }
 

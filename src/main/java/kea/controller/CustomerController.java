@@ -58,6 +58,18 @@ public class CustomerController {
 
     @GetMapping("/editcustomer")
     public String updateCustomer(@RequestParam("customer_id") int id, Model model){
+        model.addAttribute("customer", CR.readId(id));
+        return "/editcustomer";
+    }
+
+    @PostMapping("editcustomer")
+    public String updateCustomer(@ModelAttribute Customer customer){
+        CR.update(customer);
+        return "redirect:/adminmenu";
+    }
+
+    /*@GetMapping("/editcustomer")
+    public String updateCustomer(@RequestParam("customer_id") int id, Model model){
         Customer customerUpdate = new Customer();
         for(Customer i : customer){
             if(i.getCustomer_id()==id){
@@ -67,15 +79,15 @@ public class CustomerController {
         model.addAttribute("customer", customerUpdate);
 
         return "editcustomer";
-    }
+    }*/
 
-    @PostMapping("/editcustomer")
+    /*@PostMapping("/editcustomer")
     public String editCustomerNow(@ModelAttribute Customer customerEdit, Model model){
         CR.update(customerEdit);
         customer = CR.read();
         model.addAttribute("customer", customer);
         return "adminmenu";
-    }
+    }*/
 
     @GetMapping("/details")
     public String details(@RequestParam("customer_id") int id, Model model) {

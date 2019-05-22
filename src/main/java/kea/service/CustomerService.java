@@ -25,7 +25,7 @@ public class CustomerService implements ServiceI<Customer> {
 
     @Override
     public Customer update(Customer customer) {
-        return CR.update(customer);
+        return null;
     }
 
     @Override

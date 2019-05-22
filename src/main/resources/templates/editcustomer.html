@@ -11,31 +11,30 @@
 <th:block th:include="fragment/nav :: nav"></th:block>
 
 
-<div align="center">
-    <h1>Updater en kunde</h1>
-
-    <form action="/editcustomer" method="post">
-        <input type="hidden" th:value="${customer.customer_id}" name="customer_id">
-        <label>Telefon nummber</label>
-        <input type="text" name ="phone_number">
-        <label>Email</label>
-        <input type="text" name ="email">
-        <label>By</label>
-        <input type="text" name ="city">
-        <label>Postnummer</label>
-        <input type="text" name ="zipcode">
-        <label>Kørepakke</label>
-        <input type="text" name ="course">
-        <label>Lokation</label>
-        <input type="text" name ="location"
-        >
-
-        <input type="submit" value="Opdater kunde" class="btn-ed">
+<div class="container">
+    <h1>Opdater instruktørs informationer</h1>
+    <!-- alt info kan opdateres undtagen ID -->
+    <form  th:action="@{/editcustomer}" method="Post">
+        <input type="hidden" th:field="${customer.customer_id}" readonly ="true"/>
+        <label> Skriv telefon nummer:</label>
+        <input type="text" th:field="${customer.phone_number}" required="true"/>
+        <label> Skriv email:</label>
+        <input type="text" th:field="${customer.email}" required="true"/>
+        <label> Skriv by:</label>
+        <input type="text" th:field="${customer.city}" required="true"/>
+        <label> Skriv postnummer:</label>
+        <input type="text" th:field="${customer.zipcode}" required="true"/>
+        <label> Skriv kørepakke:</label>
+        <input type="text" th:field="${customer.course}" required="true"/>
+        <label> Skriv lokation</label>
+        <input type="text" th:field="${customer.location}" required="true"/>
+        <input type="submit" value="Send" class="btn-send"/>
     </form>
     <a th:href="@{'/'}">
         <button class="btn btn-ed">Back</button>
     </a>
 </div>
+
 
 
 </body>

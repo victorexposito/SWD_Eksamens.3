@@ -23,6 +23,9 @@ body {
 .yes{
     background-color: green;
 }
+.details{
+    background-color: lightblue;
+}
 
 .btn-details {
     background-color: #17a2b8!important;

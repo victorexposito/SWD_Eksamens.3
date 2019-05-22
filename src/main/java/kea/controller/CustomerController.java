@@ -24,7 +24,7 @@ public class CustomerController {
 
     @GetMapping("/addcustomer")
     public String addCustomer(Model model){
-        customer = CR.readAll();
+        //customer = CR.readAll();
         model.addAttribute("customer", customer);
         return "addcustomer";
     }
@@ -45,14 +45,14 @@ public class CustomerController {
 
     @GetMapping("/delete")
     public String delete(@RequestParam("customer_id") int id, Model model) {
-        model.addAttribute("instructor", CR.readId(id));
+        model.addAttribute("customer", CR.readId(id));
         return "/delete";
     }
 
     @PostMapping("/delete")
     public String delete(@ModelAttribute Customer customer) {
         CR.delete(customer.getCustomer_id());
-        return "redirect:/InstructorIndex";
+        return "redirect:/adminmenu";
     }
 
 }

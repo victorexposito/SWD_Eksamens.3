@@ -7,13 +7,14 @@
 </head>
 </head>
 <body class="color">
+<th:block th:include="fragment/nav :: nav"></th:block>
     <div class="box1">
         <h2>Er du sikker på at du vil slette</h2>
         <form action="#" th:action="@{/delete}" method="post">
-            <p th:text="${Customer.first_name + ' ' +  Customer.last_name}"></p>
-            <input type="hidden" th:field="${Customer.customer_id}"/>
-            <input type="submit" value="JA" class="btn btn-send noYes"/>
-            <a href="/adminmenu" class="btn btn-del noYes">NEJ</a>
+            <p th:text="${customer.first_name + ' ' +  customer.last_name}"></p>
+            <input type="hidden" th:field="${customer.customer_id}"/>
+            <input type="submit" value="JA" class="btn yes"/>
+            <a href="/adminmenu" class="btn delete">NEJ</a>
         </form>
     </div>
 </div>

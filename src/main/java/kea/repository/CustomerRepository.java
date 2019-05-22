@@ -73,7 +73,7 @@ public class CustomerRepository implements RepositoryI<Customer> {
 
     @Override
     public boolean delete(int id){
-        int result = jdbc.update("DELETE FROM  customer WHERE customer_id = '" + id + "'");
+        jdbc.update("DELETE FROM customer WHERE customer_id = '" + id + "'");
         return true;
     }
 }

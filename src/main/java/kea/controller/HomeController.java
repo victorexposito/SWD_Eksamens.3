@@ -39,6 +39,11 @@ public class HomeController {
         return "location";
     }
 
+    @GetMapping("/payment")
+    public String paymentMenu(){
+        return "payment";
+    }
+
     @GetMapping("/checkout")
     public String checkout(){
         return "checkout";

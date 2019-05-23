@@ -2,7 +2,9 @@ package kea.repository;
 
 import kea.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Repository;
 
@@ -84,6 +86,15 @@ public class CustomerRepository implements RepositoryI<Customer> {
     public boolean delete(int id){
         jdbc.update("DELETE FROM customer WHERE customer_id = '" + id + "'");
         return true;
+    }
+
+    public List<Customer> readAll(){
+
+        String sql = ("SELECT * FROM customer ORDER BY customer_id");
+        RowMapper<Customer> rowMapper = new BeanPropertyRowMapper<>(Customer.class);
+        List<Customer> customerList = jdbc.query(sql, rowMapper);
+
+        return customerList;
     }
 
 }

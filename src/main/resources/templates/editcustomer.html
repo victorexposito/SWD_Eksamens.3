@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Edit a customer</title>
     <link rel="stylesheet" type="text/css" th:href="@{/bootstrap-grid.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/addcustcss.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
 </head>
 <body>
@@ -11,9 +12,9 @@
 <th:block th:include="fragment/nav :: nav"></th:block>
 
 
-<div class="container">
+<!--<div class="container">
     <h1>Opdater instruktørs informationer</h1>
-    <!-- alt info kan opdateres undtagen ID -->
+    <!-- alt info kan opdateres undtagen ID
     <form  th:action="@{/editcustomer}" method="Post">
         <input type="hidden" th:field="${customer.customer_id}" readonly ="true"/>
         <label> Skriv telefon nummer:</label>
@@ -34,7 +35,78 @@
         <button class="btn btn-ed">Back</button>
     </a>
 </div>
+-->
 
+<div class="container">
+    <form th:action="@{/editcustomer}" method="post">
+        <div class="row">
+            <div class="col-25">
+                <label for="custId"></label>
+            </div>
+            <div class="col-75">
+                <input type="hidden" id="custId" th:field="${customer.customer_id}" readonly="true">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="pnumber">Telefon nummer</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="pnumber" th:field="${customer.phone_number}" required="true">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="email">Email</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="email" th:field="${customer.email}" required="true">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="city">Skriv by</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="city" th:field="${customer.city}" required="true">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="zipcode">Postnummer</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="zipcode" th:field="${customer.zipcode}" required="true" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="course">Course</label>
+            </div>
+            <div class="col-75">
+                <select id="course" th:field="${customer.course}">
+                    <option value="København">København</option>
+                    <option value="Søborg beach">Søborg beach</option>
+                    <option value="Århus">Århus</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="location">Lokation</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="location" th:field="${customer.location}" required="true">
+            </div>
+        </div>
+        <input type="submit" value="Send" class="btn-send"/>
+
+        <a th:href="@{'/'}">
+            <button class="btn btn-ed">Back</button>
+        </a>
+    </form>
+
+</div>
 
 
 </body>

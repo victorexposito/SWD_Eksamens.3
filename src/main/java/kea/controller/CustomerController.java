@@ -21,13 +21,13 @@ public class CustomerController {
     CustomerRepository CR;
 
     private List<Customer> customer = new ArrayList<>();
-/*
+
     @GetMapping("/addcustomer")
     public String addCustomer(Model model){
-        //customer = CR.readAll();
+        customer = CR.readAll();
         model.addAttribute("customer", customer);
         return "addcustomer";
-    }*/
+    }
 
 
     @PostMapping("/addcustomer")

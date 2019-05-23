@@ -31,7 +31,7 @@ public class HomeController {
     public String addNewCustomer(@ModelAttribute Customer customer, Model model){
         CR.create(customer);
         model.addAttribute("customer", customer);
-        return "redirect:/checkout";
+        return "redirect:/payment";
     }
 
     @GetMapping("/location")

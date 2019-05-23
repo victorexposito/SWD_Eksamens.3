@@ -17,4 +17,9 @@ public class HomeController {
     public String courseMenu(){
         return "courses";
     }
+
+    @GetMapping("/location")
+    public String loactionMenu(){
+        return "location";
+    }
 }

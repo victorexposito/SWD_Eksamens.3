@@ -11,34 +11,43 @@
 
 <th:block th:include="fragment/nav :: nav"></th:block>
 
-
-<!--<div class="container">
-    <h1>Opdater instruktørs informationer</h1>
-    <!-- alt info kan opdateres undtagen ID
-    <form  th:action="@{/editcustomer}" method="Post">
-        <input type="hidden" th:field="${customer.customer_id}" readonly ="true"/>
-        <label> Skriv telefon nummer:</label>
-        <input type="text" th:field="${customer.phone_number}" required="true"/>
-        <label> Skriv email:</label>
-        <input type="text" th:field="${customer.email}" required="true"/>
-        <label> Skriv by:</label>
-        <input type="text" th:field="${customer.city}" required="true"/>
-        <label> Skriv postnummer:</label>
-        <input type="text" th:field="${customer.zipcode}" required="true"/>
-        <label> Skriv kørepakke:</label>
-        <input type="text" th:field="${customer.course}" required="true"/>
-        <label> Skriv lokation</label>
-        <input type="text" th:field="${customer.location}" required="true"/>
-        <input type="submit" value="Send" class="btn-send"/>
-    </form>
-    <a th:href="@{'/'}">
-        <button class="btn btn-ed">Back</button>
-    </a>
-</div>
--->
-
 <div class="container">
     <form th:action="@{/editcustomer}" method="post">
+
+        <div class="row">
+            <div class="col-25">
+                <label for="location">Lokation</label>
+            </div>
+            <div class="col-75" style="margin-bottom: 128px">
+                <select id="location" name="location">
+                    <option value="Amager - ved Amager Centeret">Amager - Ved Amager Centeret, Blekingegade 4, 2300 Købnhavn S</option>
+                    <option value="Brønshøj - ved Bellahøj badet">Brønshøj - ved Bellahøj badet, Frederikssundvej 116, 2700 Brønshøj</option>
+                    <option value="Frederiksberg">Frederiksberg, Hostrupvej 6, 1950 Frederiksberg C</option>
+                    <option value="Gentofte">Gentofte, Baunegårdsvej 6, 2820 Gentofte</option>
+                    <option value="Glostup">Glostrup, Stationsperken 20, 2600 Glostrup</option>
+                    <option value="Søborg">Søborg, Søborg Hovedgade 38 A, 2860 Søborg</option>
+                    <option value="Århus">Århus, Thorvaldsensgade 32, 8000 Århus C</option>
+                    <option value="Ørestad">Ørestad, Ørestads Boulevard 61, 2300 København S</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="course">Kørepakke</label>
+            </div>
+            <div class="col-75" style="margin-bottom: 70px">
+                <select id="course" name="course">
+                    <option value=".Bil Lovpakke">.Bil Lovpakke, 2 Måneder, 13000 kr</option>
+                    <option value=".Formel 1 Pakke">.Formel 1 Pakke, 1 Måned, 16299 kr</option>
+                    <option value=".MC Lovpakke">.MC Lovpakke, 2 Måneder, 10999 kr</option>
+                    <option value=". Trailerkørekort B/E">.Trailerkørekort B/E, 1 Måned, 4240 kr</option>
+                    <option value=".Lastbil kørekort">.Lastbil kørekort, 2 Måneder, 30000 kr</option>
+                    <option value=".Knallet kørekort">Knallert kørekort, 2 uger, 1500 kr</option>
+                </select>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-25">
                 <label for="custId"></label>
@@ -79,26 +88,7 @@
                 <input type="text" id="zipcode" th:field="${customer.zipcode}" required="true" >
             </div>
         </div>
-        <div class="row">
-            <div class="col-25">
-                <label for="course">Course</label>
-            </div>
-            <div class="col-75">
-                <select id="course" th:field="${customer.course}">
-                    <option value="København">København</option>
-                    <option value="Søborg beach">Søborg beach</option>
-                    <option value="Århus">Århus</option>
-                </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-25">
-                <label for="location">Lokation</label>
-            </div>
-            <div class="col-75">
-                <input type="text" id="location" th:field="${customer.location}" required="true">
-            </div>
-        </div>
+
         <input type="submit" value="Send" class="btn-send"/>
 
         <a th:href="@{'/'}">

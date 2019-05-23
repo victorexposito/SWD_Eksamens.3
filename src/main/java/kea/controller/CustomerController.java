@@ -33,10 +33,10 @@ public class CustomerController {
     @PostMapping("/addcustomer")
     public String addCustomer(@ModelAttribute Customer customer, Model model){
         CR.create(customer);
-        CR.read();
+        CR.readAll();
         model.addAttribute("customer", customer);
 
-        return "addcustomer";
+        return "redirect:/adminmenu";
     }
     @GetMapping("/adminmenu")
     public String index(Model model){

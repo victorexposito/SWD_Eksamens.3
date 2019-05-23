@@ -4,14 +4,124 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" th:href="@{/bootstrap-grid.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/addcustcss.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
 </head>
 <body>
 
-
-
-
 <div class="container">
+    <form method="post" action="/courses">
+
+        <div class="row" style="margin-bottom: 125px">
+            <div class="col-25">
+                <label for="location">Lokation</label>
+            </div>
+            <div class="col-75">
+                <select id="location" name="location">
+                    <option value="Amager - ved Amager Centeret">Amager - Ved Amager Centeret, Blekingegade 4, 2300 Købnhavn S</option>
+                    <option value="Brønshøj - ved Bellahøj badet">Brønshøj - ved Bellahøj badet, Frederikssundvej 116, 2700 Brønshøj</option>
+                    <option value="Frederiksberg">Frederiksberg, Hostrupvej 6, 1950 Frederiksberg C</option>
+                    <option value="Gentofte">Gentofte, Baunegårdsvej 6, 2820 Gentofte</option>
+                    <option value="Glostup">Glostrup, Stationsperken 20, 2600 Glostrup</option>
+                    <option value="Søborg">Søborg, Søborg Hovedgade 38 A, 2860 Søborg</option>
+                    <option value="Århus">Århus, Thorvaldsensgade 32, 8000 Århus C</option>
+                    <option value="Ørestad">Ørestad, Ørestads Boulevard 61, 2300 København S</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row" style="margin-bottom: 33px">
+            <div class="col-25">
+                <label for="course">Kørekorts pakke</label>
+            </div>
+            <div class="col-75">
+                <select id="course" name="course">
+                    <option value=".Bil Lovpakke">.Bil Lovpakke, 2 Måneder, 13000 kr</option>
+                    <option value=".Formel 1 Pakke">.Formel 1 Pakke, 1 Måned, 16299 kr</option>
+                    <option value=".MC Lovpakke">.MC Lovpakke, 2 Måneder, 10999 kr</option>
+                    <option value=". Trailerkørekort B/E">.Trailerkørekort B/E, 1 Måned, 4240 kr</option>
+                    <option value=".Lastbil kørekort">.Lastbil kørekort, 2 Måneder, 30000 kr</option>
+                    <option value=".Knallet kørekort">Knallert kørekort, 2 uger, 1500 kr</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="custId"></label>
+            </div>
+            <div class="col-75">
+                <input type="hidden" id="custId" name="customer_id" value="0">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="fname">Navn</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="fname" name="first_name" placeholder="First name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="lname">Efternavn</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="lname" name="last_name" placeholder="Last name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="pnumber">Telefon nummer</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="pnumber" name="phone_number" placeholder="Phone number">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="email">E-mail</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="email" name="email" placeholder="Your e-mail">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="city">by</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="city" name="city" placeholder="City">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="zipcode">Postnummer</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="zipcode" name="zipcode" placeholder="Zipcode">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="signup">Sign-up dato</label>
+            </div>
+            <div class="col-75">
+                <input type="date" id="signup" name="signup_date" placeholder="Signup ip date">
+            </div>
+        </div>
+
+        <input type="submit" value="Udfør" class="btn-send"/>
+
+        <a th:href="@{'/'}">
+            <button class="btn btn-ed">Tilbage</button>
+        </a>
+
+
+    </form>
+</div>
+
+
+<!--<div class="container">
         <div class="">
             <h3>.Bil Lovpakke</h3>
             <p>2 Måneder</p>
@@ -50,7 +160,7 @@
             <p>1 Måneder</p>
             <p>4240,00 kr</p>
             <p> <!-- Her skal der være link til en ny side som ved hvilke oplysninger der skal smides ind i databasen,
-             i forhold til hvad kunden har valgt -->
+             i forhold til hvad kunden har valgt
                 <button type="button" style="float:right; position: relative; top:-15px">Bestil</button>
             </p>
     </div>
@@ -59,7 +169,7 @@
             <p>2 Måneder</p>
             <p>30000 kr</p>
             <p> <!-- Her skal der være link til en ny side som ved hvilke oplysninger der skal smides ind i databasen,
-             i forhold til hvad kunden har valgt -->
+             i forhold til hvad kunden har valgt
                 <button type="button" style="float:right; position: relative; top:-15px">Bestil</button>
             </p>
     </div>
@@ -68,11 +178,10 @@
             <p>2 uger </p>
             <p>1500 kr</p>
             <p> <!-- Her skal der være link til en ny side som ved hvilke oplysninger der skal smides ind i databasen,
-             i forhold til hvad kunden har valgt -->
+             i forhold til hvad kunden har valgt
                 <button type="button" style="float:right; position: relative; top:-15px">Bestil</button>
             </p>
-    </div>
-</div>
+    </div>-->
 
 </body>
 </html>

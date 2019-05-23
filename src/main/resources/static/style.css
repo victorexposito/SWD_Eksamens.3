@@ -136,7 +136,6 @@ table thead th { border-bottom: 1px solid #000; }
     background-color: #436e70;
 }
 
-
 .label {
     color: white;
     padding: 1px;
@@ -193,3 +192,4 @@ h1{
 * {
     box-sizing: border-box;
 }
+

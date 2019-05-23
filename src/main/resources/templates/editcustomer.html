@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit a customer</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap-grid.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+</head>
+<body>
+
+<th:block th:include="fragment/nav :: nav"></th:block>
+
+
+<div class="container">
+    <h1>Opdater instruktørs informationer</h1>
+    <!-- alt info kan opdateres undtagen ID -->
+    <form  th:action="@{/editcustomer}" method="Post">
+        <input type="hidden" th:field="${customer.customer_id}" readonly ="true"/>
+        <label> Skriv telefon nummer:</label>
+        <input type="text" th:field="${customer.phone_number}" required="true"/>
+        <label> Skriv email:</label>
+        <input type="text" th:field="${customer.email}" required="true"/>
+        <label> Skriv by:</label>
+        <input type="text" th:field="${customer.city}" required="true"/>
+        <label> Skriv postnummer:</label>
+        <input type="text" th:field="${customer.zipcode}" required="true"/>
+        <label> Skriv kørepakke:</label>
+        <input type="text" th:field="${customer.course}" required="true"/>
+        <label> Skriv lokation</label>
+        <input type="text" th:field="${customer.location}" required="true"/>
+        <input type="submit" value="Send" class="btn-send"/>
+    </form>
+    <a th:href="@{'/'}">
+        <button class="btn btn-ed">Back</button>
+    </a>
+</div>
+
+
+
+</body>
+</html>

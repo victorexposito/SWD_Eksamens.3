@@ -19,7 +19,7 @@ public class CustomerRepository implements RepositoryI<Customer> {
     @Override
     public Customer create(Customer customer) {
 
-        String sql = "insert into customer(customer_id, first_name, last_name, phone_number, email, city, zip_code, course, location, signup_date)\n" +
+        String sql = "insert into customer(customer_id, first_name, last_name, phone_number, email, city, zipcode, course, location, signup_date)\n" +
                 "values (?,?,?,?,?,?,?,?,?,?,?,?)";
         jdbc.update(sql, customer.getCustomer_id(), customer.getFirst_name(), customer.getLast_name(), customer.getPhone_number(), customer.getEmail(), customer.getCity(), customer.getZipcode(), customer.getCourse(), customer.getLocation(),customer.getSignup_date());
 
@@ -58,7 +58,7 @@ public class CustomerRepository implements RepositoryI<Customer> {
                 rs.getString("phone_number"),
                 rs.getString("email"),
                 rs.getString("city"),
-                rs.getString("zip_code"),
+                rs.getString("zipcode"),
                 rs.getString("course"),
                 rs.getString("location"),
                 rs.getDate("signup_date"));
@@ -67,14 +67,24 @@ public class CustomerRepository implements RepositoryI<Customer> {
     }
 
     @Override
-    public Customer update(Customer customer) {
-        return null;
+    public boolean update(Customer customer){
+
+         jdbc.update("UPDATE  customer SET " +
+                "phone_number ='" + customer.getPhone_number() + "' , " +
+                "email = '" + customer.getEmail() + "' , " +
+                "city =  '" + customer.getCity() + "' , " +
+                "zipcode = '" + customer.getZipcode() + "' , " +
+                "course = '" + customer.getCourse()  + "' ," +
+                "location = '" + customer.getLocation() +
+                "' WHERE customer_id = '" + customer.getCustomer_id() + "'");
+        return true;
     }
 
     @Override
     public boolean delete(int id){
-        int result = jdbc.update("DELETE FROM  customer WHERE customer_id = '" + id + "'");
+        jdbc.update("DELETE FROM customer WHERE customer_id = '" + id + "'");
         return true;
     }
+
 }
 

@@ -16,6 +16,11 @@ public class HomeController {
     @Autowired
     CustomerRepository CR;
 
+    @GetMapping("/login")
+    public String loginForm(){
+        return "login";
+    }
+
     @GetMapping("/")
     public String home(){
 

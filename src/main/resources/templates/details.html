@@ -6,6 +6,7 @@
     <link href="../static/style.css" th:href="@{/style.css}" rel="stylesheet" />
 </head>
 <body>
+<th:block th:include="fragment/nav :: nav"></th:block>
     <div class="box1">
     <h2>Detaljer</h2>
     <p th:text="'Fornavn: ' + ${customer.first_name}">

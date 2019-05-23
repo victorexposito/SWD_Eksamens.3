@@ -102,7 +102,6 @@ table thead th { border-bottom: 1px solid #000; }
     text-decoration: none;
     font-size: 25px;
 }
-
 .topnav a:hover {
     background-color: #ddd;
     color: black;
@@ -111,6 +110,15 @@ table thead th { border-bottom: 1px solid #000; }
 .topnav a.active {
     background-color: #5F9EA0;
     color: white;
+}
+.log-out a{
+    float: right;
+    color: white;
+    text-align: center;
+    padding: 18px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    background-color: red;
 }
 
 

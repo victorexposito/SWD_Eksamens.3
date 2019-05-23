@@ -22,4 +22,9 @@ public class HomeController {
     public String loactionMenu(){
         return "location";
     }
+
+    @GetMapping("/checkout")
+    public String checkout(){
+        return "checkout";
+    }
 }

@@ -16,7 +16,7 @@ body {
     border: 15px solid green;
     padding: 50px;
     margin: 20px;
-    ;
+
 }
 .btn {
     background-color: white;
@@ -60,6 +60,7 @@ body {
     border-radius: 10px;
     border-style: solid;
     font-size: large;
+    
 }
 .container {
     width: 50%;

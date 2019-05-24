@@ -12,8 +12,12 @@
 <th:block th:include="fragment/nav :: nav"></th:block>
 
 <div class="box1">
-
-    <table style="font-size: 150%; text-align: center">
+    <form method="post" action="/activities2">
+        <label>Søg</label>
+        <input type="text" name = "name" style="width: 800px" onkeyup="myFunction()" id="myInput">
+        <input type="submit" value="Search" class="btn btn-create" style="width: 150px"><a href="/adminmenu"></a>
+    </form>
+    <table id="myTable" style="font-size: 150%; text-align: center">
 
         <thead>
         <tr>
@@ -51,6 +55,28 @@
     </table>
 
 </div>
+<script>
+    // filter table by customer name
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+</script>
 
 </body>
 </html>

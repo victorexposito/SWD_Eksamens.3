@@ -36,6 +36,14 @@ button:hover {
     background-color: #f44336;
 }
 
+.heading{
+    text-align: center;
+}
+
+.heading h1{
+    display: inline-block;
+}
+
 /* Center the avatar image inside this container */
 .imgcontainer {
     text-align: center;

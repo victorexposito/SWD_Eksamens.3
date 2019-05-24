@@ -120,7 +120,16 @@ table thead th { border-bottom: 1px solid #000; }
     font-size: 25px;
     background-color: red;
 }
-
+.log-in{
+    padding: 10px 15px;
+    display:block;
+    background-color: #253e91;
+    color: white;
+    align: left;
+    margin-left: 93%;
+    margin-top: 1%;
+    margin-right: 1%;
+}
 
 .btn-group button {
     background-color: #253e91; /* Green background */

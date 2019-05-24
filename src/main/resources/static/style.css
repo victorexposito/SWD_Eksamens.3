@@ -3,6 +3,11 @@ body {
     font-family: Arial, Helvetica;
     background-color: #f2f2f2;
 }
+#myInput{
+    width: 200px;
+    height: 40px;
+    font-size: medium;
+}
 
 .test{
 
